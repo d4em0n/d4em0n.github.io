@@ -4,6 +4,20 @@ layout: posts
 author: n0psledbyte
 ---
 
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quis quos in quas nesciunt at accusantium dolor distinctio enim. Blanditiis officia, aliquid voluptas iste fuga tempore veniam aliquam deserunt in!
+
+### Text
+
+The following snippet of text is rendered as **bold text**.
+
+The following snippet of text is rendered as *italicized text*.
+
+[I'm an inline-style link](https://www.google.com)
+
+For example, `<section>` should be wrapped as inline.
+
+---
+
 ### Headings
 
 # Heading 1
@@ -20,19 +34,6 @@ author: n0psledbyte
 
 ---
 
-### Text
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quis quos in quas nesciunt at accusantium dolor distinctio enim. Blanditiis officia, aliquid voluptas iste fuga tempore veniam aliquam deserunt in!
-
-The following snippet of text is rendered as **bold text**.
-
-The following snippet of text is rendered as *italicized text*.
-
-[I'm an inline-style link](https://www.google.com)
-
-For example, `<section>` should be wrapped as inline.
-
----
 
 ### Unordered List
 

@@ -3,28 +3,19 @@ layout: default
 ---
     <div class="columns">
     <div class="column is-9">
+        {% for post in site.posts %}
         <div class="tile is-ancestor">
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-            <p class="title"><a href="#">Lorem ipsum dolor sit amet.</a></p>
-            <p class="is-size-7">Written by <strong>n0psledbyte</strong> on  13 June 2018 in <a href="#">#Linux</a>, <a href="#">#Crypto</a>, <a href="#">#Writeup</a></p>
-            <div class="is-divider" style="margin:20px 0px"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin arcu vitae odio molestie, quis placerat mauris accumsan. Aenean mattis justo turpis, ut fringilla magna porttitor a. Mauris non ligula placerat enim sagittis gravida non ac turpis. Nunc pharetra, tortor id mattis egestas, dui sem tincidunt elit, sit amet volutpat ante urna ac nulla. Etiam sed bibendum turpis. Phasellus tincidunt nulla ac diam malesuada, in euismod nibh elementum ...</p>
-            <p class="has-text-right"><a class="button is-link is-inverted is-focused" href="article.html">Read More</a></p>
-            </article>
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                <p class="title"><a href="#">{{ post.title }}</a></p>
+                <p class="is-size-7">Written by <strong>{{ post.author }}</strong> on  {{ post.date | date_to_long_string }} in <a href="#">#CTF</a>, <a href="#">#Writeup</a>, <a href="#">#Reversing</a></p>
+                <div class="is-divider" style="margin:20px 0px"></div>
+                <p>{{ post.excerpt }}</p>
+                <p class="has-text-right"><a class="button is-link is-inverted is-focused" href="{{ post.url }}">Read More</a></p>
+                </article>
+            </div>
         </div>
-        </div>
-        <div class="tile is-ancestor">
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-            <p class="title"><a href="#">Nam interdum, purus a convallis suscipit.</a></p>
-            <p class="is-size-7">Written by <strong>Bayu Fedra</strong> on  05 January 2018 in <a href="#">#CTF</a>, <a href="#">#Writeup</a>, <a href="#">#Reversing</a></p>
-            <div class="is-divider" style="margin:20px 0px"></div>
-            <p>Nam interdum, purus a convallis suscipit, leo nunc dapibus dui, ultrices luctus ex diam in odio. Nam tristique egestas odio id pretium. Phasellus sed pulvinar sem. Duis vel sollicitudin velit, quis vehicula lacus. Fusce interdum cursus erat in vestibulum. Pellentesque tempor dapibus orci ...</p>
-            <p class="has-text-right"><a class="button is-link is-inverted is-focused" href="article.html">Read More</a></p>
-            </article>
-        </div>
-        </div>
+        {% endfor %}
     </div>
     <div class="column has-background-light">
         <h2 class="title is-spaced">Tags</h2>
