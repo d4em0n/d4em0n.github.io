@@ -2,6 +2,7 @@ name: Reversing.ID
 description: Revealing the Truth through Reverse Engineering
 exclude: [assets/node_modules]
 markdown: kramdown
+highlighter: rouge
 kramdown:
  input: GFM
  auto_ids: true
