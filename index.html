@@ -1,208 +1,93 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My first Bulma website</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/main.css">
-
-</head>
-
-<body>
-  <!-- Main container -->
-  <div class="">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="logo.jpg" width="28" height="28">
-        </a>
-
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="index.html">
-            Home
-          </a>
-
-          <a class="navbar-item">
-            Documentation
-          </a>
-
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              More
-            </a>
-
-            <div class="navbar-dropdown">
-              <a class="navbar-item">
-                About
-              </a>
-              <a class="navbar-item">
-                Jobs
-              </a>
-              <a class="navbar-item">
-                Contact
-              </a>
-              <hr class="navbar-divider">
-              <a class="navbar-item">
-                Report an issue
-              </a>
+---
+layout: default
+---
+    <div class="columns">
+    <div class="column is-9">
+        <div class="tile is-ancestor">
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+            <p class="title"><a href="#">Lorem ipsum dolor sit amet.</a></p>
+            <p class="is-size-7">Written by <strong>n0psledbyte</strong> on  13 June 2018 in <a href="#">#Linux</a>, <a href="#">#Crypto</a>, <a href="#">#Writeup</a></p>
+            <div class="is-divider" style="margin:20px 0px"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin arcu vitae odio molestie, quis placerat mauris accumsan. Aenean mattis justo turpis, ut fringilla magna porttitor a. Mauris non ligula placerat enim sagittis gravida non ac turpis. Nunc pharetra, tortor id mattis egestas, dui sem tincidunt elit, sit amet volutpat ante urna ac nulla. Etiam sed bibendum turpis. Phasellus tincidunt nulla ac diam malesuada, in euismod nibh elementum ...</p>
+            <p class="has-text-right"><a class="button is-link is-inverted is-focused" href="article.html">Read More</a></p>
+            </article>
+        </div>
+        </div>
+        <div class="tile is-ancestor">
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+            <p class="title"><a href="#">Nam interdum, purus a convallis suscipit.</a></p>
+            <p class="is-size-7">Written by <strong>Bayu Fedra</strong> on  05 January 2018 in <a href="#">#CTF</a>, <a href="#">#Writeup</a>, <a href="#">#Reversing</a></p>
+            <div class="is-divider" style="margin:20px 0px"></div>
+            <p>Nam interdum, purus a convallis suscipit, leo nunc dapibus dui, ultrices luctus ex diam in odio. Nam tristique egestas odio id pretium. Phasellus sed pulvinar sem. Duis vel sollicitudin velit, quis vehicula lacus. Fusce interdum cursus erat in vestibulum. Pellentesque tempor dapibus orci ...</p>
+            <p class="has-text-right"><a class="button is-link is-inverted is-focused" href="article.html">Read More</a></p>
+            </article>
+        </div>
+        </div>
+    </div>
+    <div class="column has-background-light">
+        <h2 class="title is-spaced">Tags</h2>
+        <div class="field is-grouped is-grouped-multiline">
+        <div class="control">
+            <div class="tags has-addons">
+            <a class="tag is-link is-rounded">Open Source</a>
+            <a class="tag is-delete"></a>
             </div>
-          </div>
         </div>
 
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Join Community</strong>
-              </a>
-              <!--
-              <a class="button is-light">
-                Log in
-              </a>
-              -->
+        <div class="control">
+            <div class="tags has-addons">
+            <a class="tag is-link is-rounded">Community</a>
+            <a class="tag is-delete"></a>
             </div>
-          </div>
         </div>
-      </div>
-    </nav>
-    <section class="hero is-primary">
-      <div class="hero-body">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-2 is-spaced">
-              Reversing.ID
-            </h1>
-            <!--
-            <h2 class="subtitle is-4">
-              Learn, Share, Contribute
-            </h2>
-            -->
-            <h2 class="subtitle is-4">
-              Revealing the Truth through Reverse Engineering
-            </h2>
-          </div>
+
         </div>
-      </div>
-    </section>
-    <section class="section has-background-light">
-      <div class="columns">
-        <div class="column is-9">
-          <div class="tile is-ancestor">
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title"><a href="#">Lorem ipsum dolor sit amet.</a></p>
-                <p class="is-size-7">Written by <strong>n0psledbyte</strong> on  13 June 2018 in <a href="#">#Linux</a>, <a href="#">#Crypto</a>, <a href="#">#Writeup</a></p>
-                <div class="is-divider" style="margin:20px 0px"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin arcu vitae odio molestie, quis placerat mauris accumsan. Aenean mattis justo turpis, ut fringilla magna porttitor a. Mauris non ligula placerat enim sagittis gravida non ac turpis. Nunc pharetra, tortor id mattis egestas, dui sem tincidunt elit, sit amet volutpat ante urna ac nulla. Etiam sed bibendum turpis. Phasellus tincidunt nulla ac diam malesuada, in euismod nibh elementum ...</p>
-                <p class="has-text-right"><a class="button is-link is-inverted is-focused" href="article.html">Read More</a></p>
-              </article>
+        <div class="is-divider" style="margin:10px;margin-bottom:20px"></div>
+        <div class="field is-grouped is-grouped-multiline">
+        <div class="control">
+            <div class="tags has-addons">
+            <a class="tag is-primary">Technology</a>
             </div>
-          </div>
-          <div class="tile is-ancestor">
-            <div class="tile is-parent">
-              <article class="tile is-child box">
-                <p class="title"><a href="#">Nam interdum, purus a convallis suscipit.</a></p>
-                <p class="is-size-7">Written by <strong>Bayu Fedra</strong> on  05 January 2018 in <a href="#">#CTF</a>, <a href="#">#Writeup</a>, <a href="#">#Reversing</a></p>
-                <div class="is-divider" style="margin:20px 0px"></div>
-                <p>Nam interdum, purus a convallis suscipit, leo nunc dapibus dui, ultrices luctus ex diam in odio. Nam tristique egestas odio id pretium. Phasellus sed pulvinar sem. Duis vel sollicitudin velit, quis vehicula lacus. Fusce interdum cursus erat in vestibulum. Pellentesque tempor dapibus orci ...</p>
-                <p class="has-text-right"><a class="button is-link is-inverted is-focused" href="article.html">Read More</a></p>
-              </article>
-            </div>
-          </div>
         </div>
-        <div class="column has-background-light">
-          <h2 class="title is-spaced">Tags</h2>
-          <div class="field is-grouped is-grouped-multiline">
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link is-rounded">Open Source</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
 
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link is-rounded">Community</a>
-                <a class="tag is-delete"></a>
-              </div>
+        <div class="control">
+            <div class="tags has-addons">
+            <a class="tag is-dark">Documentation</a>
             </div>
-
-          </div>
-          <div class="is-divider" style="margin:10px;margin-bottom:20px"></div>
-          <div class="field is-grouped is-grouped-multiline">
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-primary">Technology</a>
-              </div>
-            </div>
-
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-dark">Documentation</a>
-              </div>
-            </div>
-
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-danger">Writeup</a>
-              </div>
-            </div>
-
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-warning">Crypto</a>
-              </div>
-            </div>
-
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-primary">Reverse</a>
-              </div>
-            </div>
-
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-success">Event</a>
-              </div>
-            </div>
-
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Kulgram</a>
-              </div>
-            </div>
-
-          </div>
         </div>
-      </div>
-    </section>
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>Made</strong> with <span class="icon has-text-info"> <i class="is-danger fas fa-heart"></i> </span> by <a href="#">Community</a>
-        </p>
-      </div>
-    </footer>
-    <!--
-        <div class="columns is-variable is-2-mobile is-0-tablet is-3-desktop is-8-widescreen is-1-fullhd">
-            <div class="column has-background-dark has-text-white">First Column</div>
-            <div class="column has-background-white has-text-dark">Second Column</div>
-            <div class="column has-background-dark has-text-white">Third Column</div>
-            <div class="column has-background-white has-text-dark">Fourth Column</div>
+
+        <div class="control">
+            <div class="tags has-addons">
+            <a class="tag is-danger">Writeup</a>
+            </div>
         </div>
-        -->
-    <script type="text/javascript" src="lib/main.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-</body>
-</html>
+
+        <div class="control">
+            <div class="tags has-addons">
+            <a class="tag is-warning">Crypto</a>
+            </div>
+        </div>
+
+        <div class="control">
+            <div class="tags has-addons">
+            <a class="tag is-primary">Reverse</a>
+            </div>
+        </div>
+
+        <div class="control">
+            <div class="tags has-addons">
+            <a class="tag is-success">Event</a>
+            </div>
+        </div>
+
+        <div class="control">
+            <div class="tags has-addons">
+            <a class="tag is-link">Kulgram</a>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </div>
