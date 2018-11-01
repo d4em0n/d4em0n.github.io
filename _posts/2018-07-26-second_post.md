@@ -2,6 +2,7 @@
 title: Dummy Test Markdown
 layout: posts
 author: n0psledbyte
+tags: [Crypto, Reversing, "Open source"]
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis quis quos in quas nesciunt at accusantium dolor distinctio enim. Blanditiis officia, aliquid voluptas iste fuga tempore veniam aliquam deserunt in!

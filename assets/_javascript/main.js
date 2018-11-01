@@ -1,3 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('Hello Bulma!');
-});
+import $ from 'jquery';
+
+posts.map((post) => {
+  console.log(post.excerpt);
+})

@@ -1,6 +1,6 @@
 name: Reversing.ID
 description: Revealing the Truth through Reverse Engineering
-exclude: [assets/node_modules]
+exclude: [assets/node_modules, assets/_javascript]
 markdown: kramdown
 highlighter: rouge
 kramdown:
