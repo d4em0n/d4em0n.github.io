@@ -15,21 +15,7 @@ layout: default
     ];
 </script>
     <div class="columns">
-    <div class="column is-9">
-        {% for post in site.posts %}
-        <div class="tile is-ancestor">
-            <div class="tile is-parent">
-                <article class="tile is-child box">
-                <p class="title"><a href="#">{{ post.title }}</a></p>
-                <p class="is-size-7">Written by <strong>{{ post.author }}</strong> on  {{ post.date | date_to_long_string }} in 
-                <a href="#">#CTF</a>, <a href="#">#Writeup</a>, <a href="#">#Reversing</a></p>
-                <div class="is-divider" style="margin:20px 0px"></div>
-                <p>{{ post.excerpt }}</p>
-                <p class="has-text-right"><a class="button is-link is-inverted is-focused" href="{{ post.url }}">Read More</a></p>
-                </article>
-            </div>
-        </div>
-        {% endfor %}
+    <div class="column is-9" id="posts">
     </div>
     <div class="column has-background-light">
         <h2 class="title is-spaced">Tags</h2>
