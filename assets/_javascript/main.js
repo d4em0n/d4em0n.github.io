@@ -43,7 +43,11 @@ function show_posts(filter = ((item) => item)) {
 window.onhashchange = (() => {
   var tag = decodeURI(window.location.hash.substr(1))
   $("#posts").html("")
-  show_posts(filter_posts_by_tag(tag))
+  if (tag) {
+    show_posts(filter_posts_by_tag(tag))
+  } else {
+    show_posts()
+  }
 })
 
 window.onload = (() => {
