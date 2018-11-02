@@ -3,7 +3,7 @@ layout: default
 ---
 <script>
     var tags_list = [{% for tag_item in site.tags %} "{{ tag_item[0] }}" {% unless forloop.last %},{% endunless %} {% endfor %}];
-    var posts = [{% for post in site.posts %}
+    var posts = [{% for post in page.posts %}
         {
         "title": "{{ post.title }}",
         "category": "{{ post.category }}",
@@ -15,6 +15,11 @@ layout: default
         }{% unless forloop.last %},{% endunless %}{% endfor %}
     ];
 </script>
+    <div class="columns is-centered" style="padding-bottom: 20px">
+        <div class="column has-text-centered">
+            <h3 class="is-2 is-spaced">Archive post from {{ page.date | date: "%Y %B" }}</h3>
+        </div>
+    </div>
     <div class="columns">
     <div class="column is-9" id="posts">
     </div>

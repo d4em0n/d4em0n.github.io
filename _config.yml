@@ -18,5 +18,15 @@ tags_color:
   Reversing: dark
   Writeup: info
   Linux: success
+
+jekyll-archives:
+  enabled: [month]
+  layout: 'monthly_archive'
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
 plugins:
   - jekyll-seo-tag
+  - jekyll-archives
