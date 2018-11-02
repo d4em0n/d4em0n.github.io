@@ -38,7 +38,7 @@ layout: default
 
         </div>
         -->
-        <div class="is-divider" style="margin:10px;margin-bottom:20px"></div>
+        <div class="is-divider" style="margin-top:5px;margin-bottom:15px"></div>
         <div class="field is-grouped is-grouped-multiline">
             {% for tag_item in site.tags %}
             <div class="control">
@@ -49,19 +49,30 @@ layout: default
             </div>
             {% endfor %}
         </div>
-        <div class="is-divider" style="margin:10px;margin-bottom:20px"></div>
+
+        <div style="margin-top: 40px"></div>
+        <h2 class="title is-spaced">Recent Posts</h2>
+        <div class="is-divider" style="margin-top:0px;margin-bottom:15px"></div>
+        <div class="field">
+            {% for post in site.posts offset:0 limit:5 %}
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            {% endfor %}
+        </div>
+
+        <div style="margin-top: 40px"></div>
         <h2 class="title is-spaced">Archive</h2>
-        <div class="is-divider" style="margin:10px;margin-bottom:20px"></div>
+        <div class="is-divider" style="margin-top:0px;margin-bottom:15px"></div>
         <div class="field">
             {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'"  %}
             {% for yearMonth in postsByYearMonth %}
             <h3><a href="{{ yearMonth.name || date: "/%Y/%m"}}">{{ yearMonth.name }}</a></h3>
             {% endfor %}
         </div>
-        <div class="is-divider" style="margin:10px;margin-bottom:20px"></div>
+        <div style="margin-top: 40px"></div>
         <h2 class="title is-spaced">Facebook Feed</h2>
-        <div class="is-divider" style="margin:10px;margin-bottom:20px"></div>
+        <div class="is-divider" style="margin-top:0px;margin-bottom:15px"></div>
         <div class="fb-page" data-href="https://www.facebook.com/Reversing.ID/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Reversing.ID/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Reversing.ID/">Reversing.ID</a></blockquote></div>
-        <div class="is-divider" style="margin:10px;margin-bottom:20px"></div>
+
+        <div style="margin-top: 40px"></div>
     </div>
     </div>
