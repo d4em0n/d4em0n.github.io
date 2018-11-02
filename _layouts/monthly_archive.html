@@ -70,7 +70,7 @@ layout: default
         <div class="field">
             {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'"  %}
             {% for yearMonth in postsByYearMonth %}
-            <h3><a href="{{ yearMonth.name || date: "/%Y/%m"}}">{{ yearMonth.name }}</a></h3>
+            <h3><a href="{{ yearMonth.name | date: "/%Y/%m"}}">{{ yearMonth.name }}</a></h3>
             {% endfor %}
         </div>
         <div style="margin-top: 40px"></div>
