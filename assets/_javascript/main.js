@@ -25,6 +25,32 @@ function render_html_post(post_item) {
 function add_post(post_item) {
   $("#posts").append(render_html_post(post_item))
 }
-posts.map((post) => {
-  add_post(post);
+
+function filter_posts_by_tag(tag_name) {
+  return ((posts) => {
+    return posts.filter((post) => {
+      return post.tags.includes(tag_name)
+    })
+  })
+}
+
+function show_posts(filter = ((item) => item)) {
+  filter(posts).map((post) => {
+    add_post(post);
+  })
+}
+
+window.onhashchange = (() => {
+  var tag = decodeURI(window.location.hash.substr(1))
+  $("#posts").html("")
+  show_posts(filter_posts_by_tag(tag))
+})
+
+window.onload = (() => {
+  var tag = decodeURI(window.location.hash.substr(1))
+  if (tag) {
+    show_posts(filter_posts_by_tag(tag))
+  } else {
+    show_posts()
+  }
 })

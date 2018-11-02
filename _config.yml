@@ -8,3 +8,12 @@ kramdown:
  auto_ids: true
  hard_wrap: false
  syntax_highlighter: rouge
+
+# valid color: white, black, light, dark, primary, link, info, success, warning, success, danger
+# default color is primary
+tags_color: 
+  CTF: danger
+  "Open source": warning
+  Reversing: dark
+  Writeup: info
+  Linux: success
