@@ -17,3 +17,5 @@ tags_color:
   Reversing: dark
   Writeup: info
   Linux: success
+plugins:
+  - jekyll-seo-tag
