@@ -8,7 +8,6 @@ layout: article
         {% endfor %}
     <div class="is-divider" style="margin:20px 0px"></div>
     {{ content }}
-    {% if page.comments %}
     <h2 class="title has-text-info" style="margin-top:30px;font-family: 'Pattaya', sans-serif;">Share on</h2>
     <p class="buttons">
     <a class="button is-orange">
@@ -36,6 +35,7 @@ layout: article
         <span>Google+</span>
     </a>
     </p> 
+    {% if page.comments %}
     <div class="is-divider" style="margin-top:75px;margin-bottom:15px"></div>
     <div id="disqus_thread" style="margin-top:50px"></div>
     <script>
