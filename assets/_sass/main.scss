@@ -7,7 +7,6 @@
 
 /*
 // 1. Import the initial variables
-@import "../node_modules/bulma/sass/utilities/initial-variables";
 
 // 2. Set your own initial variables
 // Update the blue shade, used for links
@@ -25,32 +24,8 @@ $primary-invert: $pink-invert;
 
 // 4. Import the rest of Bulma
 */
-
-  &.is-plus
-    margin-left: $tag-delete-margin
-    padding: 0
-    position: relative
-    width: 2em
-    &::before,
-    &::after
-      background-color: currentColor
-      content: ""
-      display: block
-      left: 50%
-      position: absolute
-      top: 50%
-      transform: translateX(-50%) translateY(-50%) rotate(0deg)
-      transform-origin: center center
-    &::before
-      height: 1px
-      width: 50%
-    &::after
-      height: 50%
-      width: 1px
-    &:hover,
-    &:focus
-      background-color: darken($tag-background-color, 5%)
-    &:active
-      background-color: darken($tag-background-color, 10%)
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+$orange-invert: findColorInvert($orange) !default
+$custom-colors: ("orange": ($orange, $orange-invert));
 @import "../node_modules/bulma/bulma";
 @import '../node_modules/bulma-extensions/bulma-divider/src/sass/index';
