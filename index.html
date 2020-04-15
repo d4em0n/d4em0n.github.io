@@ -1,1 +1,110 @@
-test
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+  </head>
+  <body>
+    <script>
+      var countries = ["russian", "chinese", "arabic", "germany", "korean", "polish", "scottish", "italian", "english", "french", "japanese", "greece", "spanish", "india", "turkish", "indonesia", "vietnam", "czech"];
+      function to_tensor(name) {
+        var table = {"a": 1, "i": 2, " ": 3, "n": 4, "e": 5, "o": 6, "r": 7, "s": 8, "l": 9, "u": 10, "h": 11, "t": 12, "m": 13, "k": 14, "d": 15, "g": 16, "y": 17, "c": 18, "b": 19, "v": 20, "p": 21, "z": 22, "j": 23, "f": 24, "w": 25, "x": 26, "q": 27, "'": 28, "-": 29, ".": 30, "(": 31, ")": 32, "1": 33, "/": 34, "0": 35, "`": 36, "\"": 37, "_": 38, "[": 39, "<": 40, ">": 41};
+        name = unidecode(name).toLowerCase().split("");
+        name = name.map((w) => table[w]?table[w]:0);
+        for(let i=name.length;i<42;i++) {
+          name.push(0);
+        }
+        name = tf.tensor2d([name], [1,42]);
+        return name;
+
+      }
+      String.prototype.capitalize = function() {
+        return this.charAt(0).toUpperCase() + this.slice(1)
+      }
+      console.log("Hello world");
+      var model;
+      async function load() {
+        model = await tf.loadLayersModel("https://raw.githubusercontent.com/d4em0n/nationality-classify/master/modeljs/model.json");
+        console.log("done");
+        console.log(model);
+      }
+      function test(e) {
+        e.preventDefault();
+        console.log("masuk");
+        name = document.getElementById("name").value;
+        pred = model.predict(to_tensor(name));
+        pred.print();
+        v = pred.dataSync();
+        v = Array.from(v);
+        let res = [];
+        for(i=0;i<18;i++) {
+          res.push([v[i],countries[i]]);
+        }
+        res = res.sort(function(a,b) {
+    return a[0] - b[0];
+        }).reverse();
+        for(i=0;i<5;i++) {
+          document.getElementById("li"+(i+1)).text = (i+1) + ". " + res[i][1].capitalize();
+        }
+      }
+      load();
+    </script>
+    <section class="section">
+      <div class="container">
+        <center>
+        <h1 class="title">
+          Hello World
+        </h1>
+        <p class="subtitle">
+          Nationality Classification by Given Name using <strong>Deep Learning</strong><br>
+          <span class="help">Avaliable nationality: Russian, Chinese, Arabic, Germany, Korean, Polish, Scottish, Italian, English, French, Japanese, Greece, Spanish, India, Turkish, Indonesian, Vietnam, Czech</span>
+        </p>
+        </center>
+        <br/>
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <p class="bd-notification is-primary">
+            </p>
+            <form onsubmit="return test(event);">
+            <div class="field">
+              <label class="label">Enter the name you want to classify</label>
+            <div class="field is-grouped">
+              <p class="control is-expanded">
+              <input class="input" type="text" placeholder="Name" id="name" autocomplete=off>
+              <input class="button is-info is-fullwidth" type="submit" value="Find">
+              </input>
+              </p>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-half">
+          <div class="list">
+            <a class="list-item is-active" id="li1">
+              1. Russian
+            </a>
+            <a class="list-item" id="li2">
+              2. Chinese
+            </a>
+            <a class="list-item" id="li3">
+              3. Arabic
+            </a>
+            <a class="list-item" id="li4">
+              4. Germany
+            </a>
+            <a class="list-item" id="li5">
+              5. Korean
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body></html>
