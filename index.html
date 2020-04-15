@@ -31,6 +31,9 @@
         model = await tf.loadLayersModel("https://raw.githubusercontent.com/d4em0n/nationality-classify/master/modeljs/model.json");
         console.log("done");
         console.log(model);
+        document.getElementById("name").disabled = 0;
+        document.getElementById("submit").disabled = 0;
+        document.getElementById("name").placeholder = "Name";
       }
       function test(e) {
         e.preventDefault();
@@ -74,8 +77,8 @@
               <label class="label">Enter the name you want to classify</label>
             <div class="field is-grouped">
               <p class="control is-expanded">
-              <input class="input" type="text" placeholder="Name" id="name" autocomplete=off>
-              <input class="button is-info is-fullwidth" type="submit" value="Find">
+              <input class="input" type="text" placeholder="Loading.." id="name" autocomplete=off disabled>
+              <input class="button is-info is-fullwidth" type="submit" id="submit" value="Find" disabled>
               </input>
               </p>
             </div>
