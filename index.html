@@ -62,6 +62,10 @@
       </div>
     </section>
     <script src="bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+<!-- Adds the WASM backend to the global backend registry -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script>
     <script>
       var countries = ["russian", "chinese", "arabic", "germany", "korean", "polish", "scottish", "italian", "english", "french", "japanese", "greece", "spanish", "india", "turkish", "indonesia", "vietnam", "czech"];
       function to_tensor(name) {
@@ -107,6 +111,6 @@
           document.getElementById("li"+(i+1)).text = (i+1) + ". " + res[i][1].capitalize();
         }
       }
-      load();
+      tf.setBackend('wasm').then(() => load());
     </script>
   </body></html>
